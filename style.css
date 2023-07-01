@@ -1,0 +1,159 @@
+body {
+  background-color: #0c0c0c;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+h1.title {
+  background: lightgreen;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
+.container {
+  position: relative;
+  width: calc(25% - 10px);
+  margin-bottom: 20px;
+  background-color: lightgreen;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.like-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1;
+  display: inline-block;
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  color: black;
+  cursor: pointer;
+}
+
+.like-button.clicked {
+  color: red;
+}
+
+.comment-button,
+.share-button,
+.save-button {
+  margin-top: 10px;
+  padding: 5px;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.comment-button:hover,
+.share-button:hover,
+.save-button:hover {
+  background-color: darkgreen;
+}
+
+.comment-button i,
+.share-button i,
+.save-button i {
+  font-size: 16px;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    width: calc(50% - 10px);
+  }
+}
+
+.toggle-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1;
+}
+
+.toggle-checkbox {
+  display: none;
+}
+
+.toggle-label {
+  display: block;
+  width: 60px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: gray;
+  position: relative;
+  cursor: pointer;
+}
+
+.toggle-label::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: white;
+  transition: transform 0.3s ease;
+}
+
+.toggle-checkbox:checked + .toggle-label {
+  background-color: darkgray;
+}
+
+.toggle-checkbox:checked + .toggle-label::before {
+  transform: translateX(30px);
+}
+
+/* Dark Mode Styles */
+
+body.dark-mode {
+  background-color: #ffffff;
+  color: #fff;
+}
+
+.dark-mode h1.title {
+  background: linear-gradient(to right, #006400, #003300);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.toggle-label .toggle-icon {
+  position: absolute;
+  top: 50%;
+  left: 4px;
+  transform: translateY(-50%);
+  width: 22px;
+  height: 22px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.toggle-checkbox:checked + .toggle-label .toggle-icon {
+  transform: translate(28px, -50%);
+  background-color: #222;
+}
+
+.dark-mode .toggle-checkbox:checked + .toggle-label .toggle-icon {
+  transform: translate(0, -50%);
+  background-color: #ffbb00;
+}
+
