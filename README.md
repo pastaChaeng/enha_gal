@@ -1,3 +1,6 @@
+![image](https://github.com/pastaChaeng/enha_gal/assets/123816211/ad264d3e-422f-40ea-b9a3-6c49641bb6cb)
+
+
 # Enhypen Gallery
   It contains random photos of Kpop Boy Group so called Enhypen. 
 
